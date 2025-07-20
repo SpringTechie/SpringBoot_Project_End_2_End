@@ -1,4 +1,4 @@
-import cicd.Constants
+import Constants
 job( "SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB" ) {
     description( "JOB to Install SpringBoot_Project_End_2_End" )
     scm {
