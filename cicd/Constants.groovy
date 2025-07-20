@@ -1,4 +1,4 @@
-package cicd
+
 
 class Constants {
     public static final String COMPILE_JOB = "SPRING_BOOT_END_2_END_PROJECT_COMPILE_JOB"
