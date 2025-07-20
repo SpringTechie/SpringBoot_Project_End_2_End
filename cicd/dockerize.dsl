@@ -38,7 +38,7 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
     }
 
     publishers {
-        archiveArtifacts("app.jar")
+        archiveArtifacts("target/*.jar")
     }
 
 }
