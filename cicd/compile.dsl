@@ -1,29 +1,29 @@
-job("SPRING_BOOT_END_2_END_PROJECT_COMPILE_JOB") {
+job( "SPRING_BOOT_END_2_END_PROJECT_COMPILE_JOB" ) {
 
-        description("JOB to compile SpringBoot_Project_End_2_End")
+    description( "JOB to compile SpringBoot_Project_End_2_End" )
 
     scm {
-       git {
-           remote {
-               url("https://github.com/SpringTechie/SpringBoot_Project_End_2_End.git")
+        git {
+            remote {
+                url(Constants.REPO_URL)
 
-           }
-           branches("*/main")
+            }
+            branches(Constants.BRANCH_NAME)
 
-       }
+        }
 
     }
     steps {
         maven {
-            goals("clean compile")
-            mavenInstallation("M3")
-            rootPOM("pom.xml")
+            goals( "clean compile" )
+            mavenInstallation( "M3" )
+            rootPOM( "pom.xml" )
         }
     }
     publishers {
-        downstream("SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB","SUCCESS")
+        downstream(Constants.INSTALL_JOB , "SUCCESS" )
     }
 
 }
 
-queue("SPRING_BOOT_END_2_END_PROJECT_COMPILE_JOB")
+queue(Constants.COMPILE_JOB)

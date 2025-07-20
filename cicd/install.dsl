@@ -1,22 +1,22 @@
-job("SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB") {
-    description("JOB to Install SpringBoot_Project_End_2_End")
+job( "SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB" ) {
+    description( "JOB to Install SpringBoot_Project_End_2_End" )
     scm {
         git {
             remote {
-                url("https://github.com/SpringTechie/SpringBoot_Project_End_2_End.git")
+                url(Constants.REPO_URL)
             }
-            branches("*/main")
+            branches(Constants.BRANCH_NAME)
         }
     }
 
     steps {
         maven {
-            goals("clean install")
-            mavenInstallation("M3")
-            rootPOM("pom.xml")
+            goals( "clean install" )
+            mavenInstallation( "M3" )
+            rootPOM( "pom.xml" )
         }
     }
     publishers {
-        archiveArtifacts("target/*.jar")
+        archiveArtifacts( "target/*.jar" )
     }
 }
