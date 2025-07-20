@@ -11,7 +11,7 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
     }
     steps {
         // Copy the built JAR from the previous job
-        copyArtifacts('SpringBoot Maven Install Jenkins JOB using DSL Script') {
+        copyArtifacts('SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB') {
             includePatterns('target/*.jar')
             buildSelector {
                 latestSuccessful(true)
