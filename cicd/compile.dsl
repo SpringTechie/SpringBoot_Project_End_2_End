@@ -21,7 +21,7 @@ job("SpringBoot_Project_End_2_End Compile JOB") {
         }
     }
     publishers {
-        downstream()
+        downstream("SpringBoot_Project_End_2_End Compile JOB","SUCCESS")
     }
 
 }
