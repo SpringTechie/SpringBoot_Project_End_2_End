@@ -1,4 +1,4 @@
-job("SPRING_BOOT_END_2_END_PROJECT_SEED_COMPILE_JOB") {
+job("SPRING_BOOT_END_2_END_PROJECT_COMPILE_JOB") {
 
         description("JOB to compile SpringBoot_Project_End_2_End")
 
