@@ -8,7 +8,7 @@ job("SPRING_BOOT_END_2_END_PROJECT_SEED_COMPILE_JOB") {
                url("https://github.com/SpringTechie/SpringBoot_Project_End_2_End.git")
 
            }
-           branches("/*main")
+           branches("*/main")
 
        }
 
