@@ -19,5 +19,6 @@ job( "SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB" ) {
     }
     publishers {
         archiveArtifacts( "target/*.jar" )
+        downstream(Constants.DOCKER_JOB)
     }
 }
