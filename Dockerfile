@@ -1,4 +1,4 @@
-FROM openjdk:21-jdk-slim
+FROM openjdk:23-jdk-slim
 LABEL authors="springtechie"
 WORKDIR /app
 COPY target/*.jar app.jar
