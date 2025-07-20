@@ -1,4 +1,4 @@
-JOB("SpringBoot_Project_End_2_End Compile JOB") {
+JOB("SPRING_BOOT_END_2_END_PROJECT_SEED_INSTALL_JOB") {
     description("JOB to Install SpringBoot_Project_End_2_End")
     scm {
         git {

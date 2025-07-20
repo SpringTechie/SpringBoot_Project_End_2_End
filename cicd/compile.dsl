@@ -1,4 +1,4 @@
-job("SpringBoot_Project_End_2_End Compile JOB") {
+job("SPRING_BOOT_END_2_END_PROJECT_SEED_COMPILE_JOB") {
 
         description("JOB to compile SpringBoot_Project_End_2_End")
 
@@ -21,7 +21,7 @@ job("SpringBoot_Project_End_2_End Compile JOB") {
         }
     }
     publishers {
-        downstream("SpringBoot_Project_End_2_End Compile JOB","SUCCESS")
+        downstream("SPRING_BOOT_END_2_END_PROJECT_SEED_INSTALL_JOB","SUCCESS")
     }
 
 }
