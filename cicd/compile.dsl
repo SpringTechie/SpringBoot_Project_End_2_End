@@ -21,7 +21,7 @@ job("SPRING_BOOT_END_2_END_PROJECT_COMPILE_JOB") {
         }
     }
     publishers {
-        downstream("SPRING_BOOT_END_2_END_PROJECT_SEED_INSTALL_JOB","SUCCESS")
+        downstream("SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB","SUCCESS")
     }
 
 }
