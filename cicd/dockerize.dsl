@@ -9,10 +9,11 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
             branches(Constants.BRANCH_NAME)
         }
     }
+
     steps {
         // Copy the built JAR from the previous job
         copyArtifacts('SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB') {
-            includePatterns('target/*.jar')
+            includePatterns('target/SpringBoot_Project_End_2_End-0.0.1-SNAPSHOT.jar')
             buildSelector {
                 latestSuccessful(true)
             }
