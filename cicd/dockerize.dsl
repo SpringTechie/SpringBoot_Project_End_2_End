@@ -17,6 +17,11 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
                 latestSuccessful(true)
             }
         }
+        // ✅ Log the name of the JAR file
+        shell('''\
+        echo "🔍 Listing copied JAR file:"
+        ls -lh target/*.jar
+        '''.stripIndent())
 
         // Now build the Docker image with the copied jar
         shell('''\
