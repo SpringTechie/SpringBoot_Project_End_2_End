@@ -11,6 +11,10 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
     }
 
     steps {
+        shell('''\
+        echo "🧹 Cleaning target folder before copying artifacts..."
+        rm -f target/*.jar
+        ''')
         // Copy the built JAR from the previous job
         copyArtifacts('SPRING_BOOT_END_2_END_PROJECT_INSTALL_JOB') {
             includePatterns('target/SpringBoot_Project_End_2_End-0.0.1-SNAPSHOT.jar')
