@@ -21,7 +21,9 @@ job("SPRING_BOOT_END_2_END_PROJECT_PUSH_TO_DOCKER_HUB_JOB") {
 
     wrappers {
         credentialsBinding {
-            usernamePassword('DOCKER_USERNAME', 'DOCKER_PASSWORD', 'docker-hub-creds')
+            usernamePassword('DOCKER_USERNAME',
+            'DOCKER_PASSWORD',
+            'docker-hub-creds')
         }
         environmentVariables {
             env('IMAGE_NAME', 'springboot-end-end-demo')
@@ -29,7 +31,7 @@ job("SPRING_BOOT_END_2_END_PROJECT_PUSH_TO_DOCKER_HUB_JOB") {
     }
 
     publishers {
-        // Optional: archive a text file with image name or push confirmation
+
         archiveArtifacts('**/project-id.txt')
     }
 }
