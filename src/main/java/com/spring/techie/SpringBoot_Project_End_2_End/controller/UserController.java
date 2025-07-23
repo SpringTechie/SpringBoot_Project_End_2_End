@@ -24,7 +24,7 @@ public class UserController {
 
     @PostMapping("/save")
     @Operation(description = "To create new User",summary = "save new User")
-    @Parameter(name = "User",description = "User Info")
+    @Parameter(name = "user",description = "User Info")
     @ApiResponse(responseCode = "201", description = "returns 201  user save successfully into DB")
     public User saveUser(@RequestBody User user) {
        return userServiceImpl.saveUser(user);
