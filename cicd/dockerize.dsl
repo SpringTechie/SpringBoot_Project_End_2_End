@@ -32,7 +32,7 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
         shell('''\
         echo "🛠️  Building Docker image..."
         docker build -t ${Constants.IMAGE_NAME}:${Constants.IMAGE_TAG} .
-
+        '''.stripIndent())
     }
     wrappers {
         credentialsBinding {
