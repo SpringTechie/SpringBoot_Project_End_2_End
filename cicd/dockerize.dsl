@@ -31,10 +31,8 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
         // Now build the Docker image with the copied jar
         shell('''\
         echo "🛠️  Building Docker image..."
-        docker build -t springboot-end-end-project:latest .
+        docker build -t ${Constants.IMAGE_NAME}:${Constants.IMAGE_TAG} .
 
-        docker images --no-trunc --quiet springboot-end-end-project:latest > project-id.txt
-        '''.stripIndent())
     }
     wrappers {
         credentialsBinding {
@@ -43,7 +41,7 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
             'docker-hub-creds')
         }
         environmentVariables {
-            env('IMAGE_NAME', 'springboot-end-end-project')
+            env('IMAGE_NAME', Constants.DOCKER_IMAGE_NAME)
         }
     }
 
