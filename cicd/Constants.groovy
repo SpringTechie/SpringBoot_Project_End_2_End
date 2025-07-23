@@ -7,6 +7,6 @@ class Constants {
     public static final String BRANCH_NAME = "*/main"
     public static final String REPO_URL = "https://github.com/SpringTechie/SpringBoot_Project_End_2_End.git"
     public static final String DOCKER_IMAGE_NAME = "springboot-end-end-project"
-    public static final String IMAGE_TAG = 'latest'
+    public static final String DOCKER_IMAGE_TAG = 'latest'
     public static final String APP_CONTAINER = "springboot-end-end-demo-app-container"
 }

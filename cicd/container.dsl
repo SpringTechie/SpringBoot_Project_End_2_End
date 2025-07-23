@@ -5,11 +5,11 @@ job("SPRING_BOOT_END_2_END_PROJECT_RUN_CONTAINER_JOB") {
     steps {
         shell('''\
         echo "Stopping any existing container..."
-        docker stop ${Constants.APP_CONTAINER} || true
-        docker rm ${Constants.APP_CONTAINER} || true
+        docker stop $CONTAINER_NAME || true
+        docker rm $CONTAINER_NAME || true
 
         echo "Running new container from image..."
-        docker run -d --name ${Constants.APP_CONTAINER} -p 9090:9090 ${Constants.DOCKER_IMAGE_NAME}:${Constants.DOCKER_IMAGE_TAG}
+        docker run -d --name $CONTAINER_NAME -p 9090:9090 $IMAGE_NAME:$IMAGE_TAG
 
         echo "Container started. Check with: docker ps"
         '''.stripIndent())
@@ -21,5 +21,11 @@ job("SPRING_BOOT_END_2_END_PROJECT_RUN_CONTAINER_JOB") {
             'DOCKER_PASSWORD',
             'docker-hub-creds')
         }
+        environmentVariables {
+            env('IMAGE_NAME', Constants.DOCKER_IMAGE_NAME)
+            env('IMAGE_TAG', Constants.DOCKER_IMAGE_TAG)
+            env('CONTAINER_NAME', Constants.APP_CONTAINER)
+        }
     }
+
 }

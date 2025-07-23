@@ -31,7 +31,7 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
         // Now build the Docker image with the copied jar
         shell('''\
         echo "🛠️  Building Docker image..."
-        docker build -t ${Constants.IMAGE_NAME}:${Constants.IMAGE_TAG} .
+        docker build -t $IMAGE_NAME:$IMAGE_TAG .
         '''.stripIndent())
     }
     wrappers {
@@ -42,6 +42,7 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
         }
         environmentVariables {
             env('IMAGE_NAME', Constants.DOCKER_IMAGE_NAME)
+            env('IMAGE_TAG', Constants.DOCKER_IMAGE_TAG)
         }
     }
 
