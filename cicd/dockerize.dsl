@@ -12,7 +12,7 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
 
     steps {
         shell('''\
-        echo "🧹 Cleaning target folder before copying artifacts..."
+        echo " Cleaning target folder before copying artifacts..."
         rm -f target/*.jar
         ''')
         // Copy the built JAR from the previous job
@@ -31,9 +31,9 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
         // Now build the Docker image with the copied jar
         shell('''\
         echo "🛠️  Building Docker image..."
-        docker build -t springboot-end-end-demo:latest .
+        docker build -t springboot-end-end-project:latest .
 
-        docker images --no-trunc --quiet springboot-end-end-demo:latest > project-id.txt
+        docker images --no-trunc --quiet springboot-end-end-project:latest > project-id.txt
         '''.stripIndent())
     }
     wrappers {
@@ -43,14 +43,14 @@ job( "SPRING_BOOT_END_2_END_PROJECT_DOCKER_IMAGE_JOB" ) {
             'docker-hub-creds')
         }
         environmentVariables {
-            env('IMAGE_NAME', 'springboot-end-end-demo')
+            env('IMAGE_NAME', 'springboot-end-end-project')
         }
     }
 
     publishers {
         archiveArtifacts("target/*.jar")
-        downstream("SPRING_BOOT_END_2_END_PROJECT_RUN_CONTAINER_JOB")
-        downstream("SPRING_BOOT_END_2_END_PROJECT_PUSH_TO_DOCKER_HUB_JOB")
+       // downstream("SPRING_BOOT_END_2_END_PROJECT_RUN_CONTAINER_JOB")
+       // downstream("SPRING_BOOT_END_2_END_PROJECT_PUSH_TO_DOCKER_HUB_JOB")
     }
 
 }
